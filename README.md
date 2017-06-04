@@ -8,13 +8,14 @@ It is a shell script to install WORDPRESS on the ubuntu server [php,mysql,nginx,
   - Setup in 2 mins
   - Work with most of php framworks and open scripts  
   - Use php7.0 and most of the php packages(php7.0-mysql php7.0-fpm php7.0-mbstring php7.0-xml php7.0-curl php7.0-json mcrypt php7.0-mcrypt php7.0-zip )
+  - More Suitable for Ubuntu 14.04
 
 # How to use !
 
   - In your ubuntu server 
     ```sh
-    git clone git@github.com:ShubhamBansal1997/Wordpress-shell-script.git
-    cd Wordpress-shell-script.git
+    https://github.com/ShubhamBansal1997/Wordpress-Shell-Script.git
+    cd Wordpress-Shell-Script.git
     [sudo] chmod +x wordpress.sh
     ./wordpress.sh
     ```
