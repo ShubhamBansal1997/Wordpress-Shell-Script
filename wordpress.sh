@@ -1,7 +1,7 @@
 # @Author: Shubham Bansal
 # @Date:   2017-06-04 15:15:18
 # @Last Modified by:   Shubham Bansal
-# @Last Modified time: 2017-06-04 16:11:02
+# @Last Modified time: 2017-06-06 05:38:34
 echo '---------------------------------------------------'
 echo '*************WELCOME TO WORDPRESS SETUP************'
 echo '---------------------------------------------------'
@@ -79,7 +79,7 @@ server {
         application/xml+rss;
 
     location / {
-      try_files $uri $uri/ /index.php?q=$uri&$args;
+      try_files \$uri \$uri/ /index.php?q=\$uri&\$args;
     }
 
     location ~ \.php$ {
