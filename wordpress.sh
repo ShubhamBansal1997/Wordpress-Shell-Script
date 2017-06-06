@@ -1,7 +1,7 @@
 # @Author: Shubham Bansal
 # @Date:   2017-06-04 15:15:18
 # @Last Modified by:   Shubham Bansal
-# @Last Modified time: 2017-06-06 05:38:34
+# @Last Modified time: 2017-06-06 05:41:52
 echo '---------------------------------------------------'
 echo '*************WELCOME TO WORDPRESS SETUP************'
 echo '---------------------------------------------------'
@@ -549,6 +549,7 @@ pm.max_spare_servers = 3
 EOF
 
 ${admin} /etc/init.d/php7.0-fpm restart
+${admin} chmod 777 -R /var/www/html/${domainname}/wordpress
 echo "Congrats!!! Your WORDPRESS IS SETUPED"
 echo "www-directory: /var/www/html/${domainname}/wordpress"
 echo "nginx-conf-file: /etc/nginx/conf.d/default.conf"
