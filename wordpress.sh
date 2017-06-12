@@ -1,7 +1,7 @@
 # @Author: Shubham Bansal
 # @Date:   2017-06-04 15:15:18
 # @Last Modified by:   Shubham Bansal
-# @Last Modified time: 2017-06-06 05:41:52
+# @Last Modified time: 2017-06-12 22:31:40
 echo '---------------------------------------------------'
 echo '*************WELCOME TO WORDPRESS SETUP************'
 echo '---------------------------------------------------'
@@ -549,7 +549,16 @@ pm.max_spare_servers = 3
 EOF
 
 ${admin} /etc/init.d/php7.0-fpm restart
-${admin} chmod 777 -R /var/www/html/${domainname}/wordpress
+# setuping up the permissions
+${admin} chown -R nginx:www-data /var/www/html/${domainname}/wordpress
+${admin} find /var/www/html/${domainname}/wordpress -type d -exec chmod 755 {} \;
+${admin} find /var/www/html/${domainname}/wordpress -type f -exec chmod 644 {} \;
+${admin} find /var/www/html/${domainname}/wordpress/wp-content/uploads -type f -exec chmod 664 {} \;
+${admin} find /var/www/html/${domainname}/wordpress/wp-content/plugins -type f -exec chmod 664 {} \;
+${admin} find /var/www/html/${domainname}/wordpress/wp-content/themes -type f -exec chmod 644 {} \;
+${admin} chmod 440 /var/www/html/${domainname}/wordpress/wp-config.php
+${admin} chmod -R g+s /var/www/html/${domainname}/wordpress/
+
 echo "Congrats!!! Your WORDPRESS IS SETUPED"
 echo "www-directory: /var/www/html/${domainname}/wordpress"
 echo "nginx-conf-file: /etc/nginx/conf.d/default.conf"
