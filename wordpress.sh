@@ -1,7 +1,7 @@
 # @Author: Shubham Bansal
 # @Date:   2017-06-04 15:15:18
 # @Last Modified by:   Shubham Bansal
-# @Last Modified time: 2017-06-21 19:03:27
+# @Last Modified time: 2017-07-10 19:52:28
 echo '---------------------------------------------------'
 echo '*************WELCOME TO WORDPRESS SETUP************'
 echo '---------------------------------------------------'
@@ -50,7 +50,7 @@ ${admin} apt-get php7.0-json mcrypt php7.0-mcrypt git
 ${admin} apt-get install zip unzip php7.0-zip
 ${admin} mv /etc/nginx/conf.d/default.conf /etc/nginx/default.conf-bkup
 ${admin} touch /etc/nginx/conf.d/default.conf
-${admin} sudo bash -c "cat >> /etc/nginx/conf.d/default.conf" <<EOF
+${admin} bash -c "cat >> /etc/nginx/conf.d/default.conf" <<EOF
 server {
     listen 80 default_server;
     listen [::]:80 default_server ipv6only=on;
@@ -556,7 +556,6 @@ ${admin} find /var/www/html/${domainname}/wordpress -type f -exec chmod 644 {} \
 ${admin} find /var/www/html/${domainname}/wordpress/wp-content/uploads -type f -exec chmod 664 {} \;
 ${admin} find /var/www/html/${domainname}/wordpress/wp-content/plugins -type f -exec chmod 664 {} \;
 ${admin} find /var/www/html/${domainname}/wordpress/wp-content/themes -type f -exec chmod 644 {} \;
-${admin} chmod 440 /var/www/html/${domainname}/wordpress/wp-config.php
 ${admin} chmod -R g+s /var/www/html/${domainname}/wordpress/
 
 echo "Congrats!!! Your WORDPRESS IS SETUPED"
