@@ -14,7 +14,7 @@ It is a shell script to install WORDPRESS on the ubuntu server [php,mysql,nginx,
 
   - In your ubuntu server 
     ```sh
-    https://github.com/ShubhamBansal1997/Wordpress-Shell-Script.git
+    [sudo] git clone https://github.com/ShubhamBansal1997/Wordpress-Shell-Script.git
     cd Wordpress-Shell-Script.git
     [sudo] chmod +x wordpress.sh
     ./wordpress.sh
