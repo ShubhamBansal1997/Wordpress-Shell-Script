@@ -1,7 +1,7 @@
 # @Author: Shubham Bansal
 # @Date:   2017-06-04 15:15:18
 # @Last Modified by:   Shubham Bansal
-# @Last Modified time: 2017-06-12 22:31:40
+# @Last Modified time: 2017-06-21 19:03:27
 echo '---------------------------------------------------'
 echo '*************WELCOME TO WORDPRESS SETUP************'
 echo '---------------------------------------------------'
@@ -122,7 +122,7 @@ ${admin} /etc/init.d/nginx restart
 ${admin} /etc/init.d/php7.0-fpm restart
 ${admin} apt-get install mysql-client mysql-server
 touch db.sql
-${admin} sudo bash -c "cat >> db.sql " <<EOF
+${admin} bash -c "cat >> db.sql " <<EOF
 CREATE DATABASE ${dbname};
 EOF
 echo 'Enter your mysql password'
